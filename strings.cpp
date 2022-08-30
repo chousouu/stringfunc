@@ -136,7 +136,7 @@ char *fgets_my(char *str, int count, FILE *fp)
 
 char *strdup_my(char *str1)
 {
-    char *new_str1 = (char*)malloc(strlen(str1));
+    char *new_str1 = (char*)calloc(strlen(str1), 1);
     
     strcpy(new_str1, str1);
     
