@@ -1,7 +1,7 @@
 #ifndef SELFMADESTRINGTESTER_H
 #define SELFMADESTRINGTESTER_H
 
-
+void PrintOptions();
 void FuncStringDecider();
 void StringsDecider(int i);
 void ResultTeller(int result);

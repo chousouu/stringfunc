@@ -10,14 +10,10 @@ char options[][15] =
     "strncat", "fgets"  , "strdup"
 };
 
+
 void FuncStringDecider()
 {
-    printf("Type one of the following command to test it:\n");
-    printf("1.puts     2.strchr    3.strlen\n");
-    printf("4.strcpy   5.strncpy   6.strcat\n");
-    printf("7.strncat  8.fgets     9.strdup\n");
-
-  //  printf("Press 'q' to leave\n");
+    PrintOptions();
 
     char commando[10] = "";
     scanf("%s", commando);
@@ -80,7 +76,6 @@ void StringsDecider(int i)
         ResultTeller(CompareTestResult(arr1, arr2));
     }
 }
-
 
 void c_puts(char *s)
 {
@@ -154,9 +149,6 @@ void c_fgets(char *arr1, char *arr2, FILE *fp)
     fgets_my(arr2, 10, fp);
 }
 
-
-
-
 int CompareTestResult(char *tmp1, char*tmp2)
 {  
     printf("tmp 1 %s %p \n", tmp1, tmp1);
@@ -175,4 +167,12 @@ void ResultTeller(int result)
     {
         printf("Test FAILED\n");
     }
+}
+
+void PrintOptions()
+{
+    printf("Type one of the following command to test it:\n");
+    printf("1.puts     2.strchr    3.strlen\n");
+    printf("4.strcpy   5.strncpy   6.strcat\n");
+    printf("7.strncat  8.fgets     9.strdup\n");
 }
