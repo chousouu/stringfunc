@@ -46,6 +46,7 @@ int strlen_my(const char *s)
 char *strcpy_my(char *copy_to, const char* copy_from) 
 {
     int i = 0;
+
     for (i = 0; copy_from[i] != '\0'; i++)
     {
         copy_to[i] = copy_from[i];
@@ -57,10 +58,12 @@ char *strcpy_my(char *copy_to, const char* copy_from)
 char *strncpy_my(char *copy_to, char* copy_from, int n) 
 {
     int i = 0;
+    
     for (i = 0; i < n && copy_from[i] != '\0'; i++)
     {
         copy_to[i] = copy_from[i];
     }
+    
     for ( ; i < n; i++)
     {
         copy_to[i] = '\0';
@@ -72,10 +75,12 @@ char *strncpy_my(char *copy_to, char* copy_from, int n)
 char *strcat_my(char *s_to, char *s_from) 
 {
     int number = 0;
+    
     while(s_to[number] != '\0')
     {
         number++;
     }
+    
     for (int i = 0; s_from[i] != '\0'; i++)
     {
         *(s_to + number + i) = *(s_from + i);
@@ -92,6 +97,7 @@ char *strncat_my(char *s_to, char *s_from, int n)
     {
         number++;
     }
+    
     for (int i = 0; i < n && s_from[i] != '\0'; i++)
     {
         *(s_to + number + i) = *(s_from + i);
@@ -112,11 +118,14 @@ char *fgets_my(char *str, int count, FILE *fp)
     {
         int ch = '!';
         int i = 0;
+        
         for(i = 0; (ch = getc(fp)) != '\n' && ch != EOF && i < count-1; i++)
         {
             str[i] = ch;
         }
+        
         str[++i] = '\0';
+        
         return str;
     }
     else 
