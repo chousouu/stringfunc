@@ -3,10 +3,10 @@
 int puts_my(const char *s) 
 {
     int number = 0;
-    
+
     while (*(s+number) != '\n' && *(s+number) != '\0' )
     {
-        printf("%c", s[number]);
+        putc(*(s + number), stdout);
         number++;
     }
 
@@ -23,7 +23,7 @@ char *strchr_my(char *s, char c)
     {
         if (s[number] == c)
         {
-            return &s[number];
+            return s + number;
         }
         number++;
     }
@@ -50,17 +50,13 @@ char *strcpy_my(char *copy_to, const char* copy_from)
     {
         copy_to[i] = copy_from[i];
     }
-    for ( ; i < strlen(copy_from); i++)
-    {
-        copy_to[i] = '\0';
-    }
     
     return copy_to;
 }
 
 char *strncpy_my(char *copy_to, char* copy_from, int n) 
 {
-    int i;
+    int i = 0;
     for (i = 0; i < n && copy_from[i] != '\0'; i++)
     {
         copy_to[i] = copy_from[i];
@@ -114,12 +110,11 @@ char *fgets_my(char *str, int count, FILE *fp)
 
     if(fp && (count > 1))
     {
-        int ch = ' ';
+        int ch = '!';
         int i = 0;
         for(i = 0; (ch = getc(fp)) != '\n' && ch != EOF && i < count-1; i++)
         {
             str[i] = ch;
-            //printf("%d%c ", i, str[i]); 
         }
         str[++i] = '\0';
         return str;
