@@ -137,3 +137,21 @@ char *strdup_my(char *str1)
     
     return new_str1;
 }
+
+char *getline_my(char *str1, int max_count, char delim)
+{
+    int i = 0;
+    char c = '!';
+    c = getchar();
+    for(i = 0; c != delim && i < max_count; i++)
+    {   
+        str1[i] = c;
+        c = getchar();
+    }
+    
+    while(getchar() != '\n')
+    {
+        continue;
+    }
+    return str1;
+}

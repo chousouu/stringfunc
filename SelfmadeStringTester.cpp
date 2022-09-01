@@ -7,7 +7,8 @@ char options[][15] =
 {
     "puts"   , "strchr" , "strlen",
     "strcpy" , "strncpy", "strcat",
-    "strncat", "fgets"  , "strdup"
+    "strncat", "fgets"  , "strdup",
+    "getline"
 };
 
 
@@ -20,7 +21,7 @@ int FuncStringDecider(char *commando)
 
     int check_no_command = 1;
 
-    for(int i = 0; i < 9; i++)
+    for(int i = 0; i < 10; i++)
     {
         if (strcmp(commando, options[i]) == 0)
         {
@@ -84,7 +85,16 @@ void StringsDecider(int i)
 
         ResultTeller(CompareTestResult(arr1, arr2));
     }
+    else if(i == 9)
+    {
+        char str1[30] = "";
+
+        getline_my(str1, 15, ';');
+        printf("%s", str1);
+    }
+
 }
+
 
 void c_puts(char *s)
 {
@@ -185,4 +195,5 @@ void PrintOptions()
     printf("1.puts     2.strchr    3.strlen\n");
     printf("4.strcpy   5.strncpy   6.strcat\n");
     printf("7.strncat  8.fgets     9.strdup\n");
+    printf("9. getline\n");
 }

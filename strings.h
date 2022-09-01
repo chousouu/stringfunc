@@ -23,7 +23,7 @@ char *fgets_my( char *str, int count, FILE *stream );// Reads at most count-1 ch
 
 char *strdup_my(char *str1);// duplicates string (by using dynamic memory)
 
-//char *getline_my(char *str1, int max_count, char delim);
+char *getline_my(char *str1, int max_count, char delim); //extracts characters from input until delim char met / max count  have been stored   
 
 
 #endif//STRINGS_H
