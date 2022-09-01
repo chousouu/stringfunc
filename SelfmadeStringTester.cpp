@@ -13,9 +13,9 @@ char options[][15] =
 
 void FuncStringDecider()
 {
-    PrintOptions();
-
     char commando[10] = "";
+
+    PrintOptions();
     scanf("%s", commando);
 
     for(int i = 0; i < 9; i++)
@@ -109,7 +109,8 @@ int c_strlen()
 {
     size_t len = strlen(arr);
     size_t len_my = strlen_my(arr);
-    printf("strlen_my %zu; \n strlen %zu\n", len_my, len);
+    printf("strlen_my: %zu\n", len_my);
+    printf("strlen   : %zu\n", len);
 
     return (len_my == len);
 }

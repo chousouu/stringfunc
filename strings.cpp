@@ -55,7 +55,7 @@ char *strcpy_my(char *copy_to, const char* copy_from)
     return copy_to;
 }
 
-char *strncpy_my(char *copy_to, char* copy_from, int n) 
+char *strncpy_my(char *copy_to, const char* copy_from, int n) 
 {
     int i = 0;
     
@@ -64,15 +64,10 @@ char *strncpy_my(char *copy_to, char* copy_from, int n)
         copy_to[i] = copy_from[i];
     }
     
-    for ( ; i < n; i++)
-    {
-        copy_to[i] = '\0';
-    }
-    
     return copy_to;
 }
 
-char *strcat_my(char *s_to, char *s_from) 
+char *strcat_my(char *s_to, const char *s_from) 
 {
     int number = 0;
     
@@ -89,7 +84,7 @@ char *strcat_my(char *s_to, char *s_from)
     return s_to;
 }
 
-char *strncat_my(char *s_to, char *s_from, int n)
+char *strncat_my(char *s_to, const  char *s_from, int n)
 {
     int number = 0;
 
