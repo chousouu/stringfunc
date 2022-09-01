@@ -11,20 +11,29 @@ char options[][15] =
 };
 
 
-void FuncStringDecider()
+int FuncStringDecider(char *commando)
 {
-    char commando[10] = "";
+    if (commando[0] == 'q')
+    {
+        return 0;
+    }
 
-    PrintOptions();
-    scanf("%s", commando);
+    int check = 1;
 
     for(int i = 0; i < 9; i++)
     {
         if (strcmp(commando, options[i]) == 0)
         {
+            check = 0;
             StringsDecider(i);
-        }    
+        }
     }
+    if (check == 1)
+    {
+        printf("Commmand \"%s\" does not exist!\n", commando);
+    }
+
+    return 1; // 1 == repeat
 }
     
 

@@ -2,7 +2,7 @@
 #define SELFMADESTRINGTESTER_H
 
 void PrintOptions();
-void FuncStringDecider();
+int FuncStringDecider(char *commando);
 void StringsDecider(int i);
 void ResultTeller(int result);
 int CompareTestResult(char *tmp1, char*tmp2);
