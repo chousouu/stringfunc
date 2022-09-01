@@ -143,6 +143,7 @@ char *getline_my(char *str1, int max_count, char delim)
     int i = 0;
     char c = '!';
     c = getchar();
+
     for(i = 0; c != delim && i < max_count; i++)
     {   
         str1[i] = c;
@@ -153,5 +154,7 @@ char *getline_my(char *str1, int max_count, char delim)
     {
         continue;
     }
+    
+    printf("\n");
     return str1;
 }
