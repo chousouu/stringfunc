@@ -4,13 +4,13 @@
 int main()
 {
     char commando[10] = "";
-    int check = 1;
+    int check_if_leave = 1;
 
-    while(check)
+    while(check_if_leave)
     {
         PrintOptions();
         scanf("%s", commando);
-        check = FuncStringDecider(commando);
+        check_if_leave = FuncStringDecider(commando);
     }
 
 }

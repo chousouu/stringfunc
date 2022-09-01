@@ -18,17 +18,17 @@ int FuncStringDecider(char *commando)
         return 0;
     }
 
-    int check = 1;
+    int check_no_command = 1;
 
     for(int i = 0; i < 9; i++)
     {
         if (strcmp(commando, options[i]) == 0)
         {
-            check = 0;
+            check_no_command = 0;
             StringsDecider(i);
         }
     }
-    if (check == 1)
+    if (check_no_command == 1)
     {
         printf("Commmand \"%s\" does not exist!\n", commando);
     }
