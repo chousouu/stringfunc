@@ -23,7 +23,6 @@ char *fgets_my( char *str, int count, FILE *stream );// Reads at most count-1 ch
 
 char *strdup_my(char *str1);// duplicates string (by using dynamic memory)
 
-char *getline_my(char *str1, int max_count, char delim); //extracts characters from input until delim char met / max count  have been stored   
-
+int getline_my(char **lineptr, unsigned long *n, FILE *fp);//считывает целую строку, сохраняя адрес буфера, содержащего текст, в *lineptr. Буфер завершается null и содержит символ новой строки, если был найден разделитель для новой строки. 
 
 #endif//STRINGS_H

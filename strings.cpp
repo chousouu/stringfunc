@@ -138,23 +138,25 @@ char *strdup_my(char *str1)
     return new_str1;
 }
 
-char *getline_my(char *str1, int max_count, char delim)
+int getline_my(char **lineptr, unsigned long *n, FILE *fp)
 {
-    int i = 0;
-    char c = '!';
-    c = getchar();
+    int read_symbols = 0;
+    int ch = '!';
 
-    for(i = 0; c != delim && i < max_count; i++)
-    {   
-        str1[i] = c;
-        c = getchar();
-    }
-    
-    while(getchar() != '\n')
+    *n = ((*n) / 120) *120 + 120;
+
+    if(*lineptr == NULL)
     {
-        continue;
+        *lineptr = (char*)calloc(*n, sizeof(char));
     }
-    
-    printf("\n");
-    return str1;
+
+    for(read_symbols = 0; (ch = getc(fp)) != '\n' && ch != EOF; read_symbols++)
+    {
+        *(*lineptr + read_symbols) = ch; 
+    }
+
+    read_symbols++;
+    *(*lineptr + read_symbols) = '\n';
+
+    return read_symbols; // amoutn of written symbols
 }

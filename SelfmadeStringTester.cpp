@@ -86,11 +86,20 @@ void StringsDecider(int i)
         ResultTeller(CompareTestResult(arr1, arr2));
     }
     else if(i == 9)
-    {
-        char str1[30] = "";
+    {        
+        char *str1;
+        FILE *fp = fopen("filik.txt", "r");
+        unsigned long n = 0;
 
-        getline_my(str1, 15, ';');
-        printf("%s", str1);
+        int result_my = getline_my(&str1, &n, fp);
+        printf("%s\nn = %zu result_my = %d\n", str1, n, result_my);
+
+/* чет не определен getline v <stdio.h>
+        rewind(fp);
+
+        int result = getline(&str1, &n, fp);
+        printf("%s, %zu, %d", str1, n, result);
+*/    
     }
 
 }
